@@ -26,6 +26,12 @@ namespace SqliteHelper
       sql_con.Close();
     }
 
+    public static void Delete(string table, string condition)
+    {
+      string txtSQLQuery = $"delete from {table} where {condition}";
+      ExecuteQuery(txtSQLQuery);
+    }
+
     public static void LoadData()
     {
       SetConnection();

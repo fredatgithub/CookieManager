@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieManager", "CookieManager\CookieManager.csproj", "{D09A8171-A51E-4C24-BE20-6635F372EA8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestDB", "ConsoleAppTestDB\ConsoleAppTestDB.csproj", "{F22C0FD9-31AD-4481-93B3-3E2B2E54AB49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D09A8171-A51E-4C24-BE20-6635F372EA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09A8171-A51E-4C24-BE20-6635F372EA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D09A8171-A51E-4C24-BE20-6635F372EA8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22C0FD9-31AD-4481-93B3-3E2B2E54AB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22C0FD9-31AD-4481-93B3-3E2B2E54AB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22C0FD9-31AD-4481-93B3-3E2B2E54AB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22C0FD9-31AD-4481-93B3-3E2B2E54AB49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

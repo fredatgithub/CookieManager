@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SQLite.EF6;
 
 namespace ConsoleAppTestDB
 {
@@ -7,6 +8,11 @@ namespace ConsoleAppTestDB
     private static void Main()
     {
       Action<string> display = Console.WriteLine;
+      string firefoxPath = @"C:\Users\fred\AppData\Roaming\Mozilla\Firefox\Profiles\54jrz5h4.default\";
+      string cookieDatabase = "cookies.sqlite";
+      var sqliteDb =  new SQLiteProviderFactory();
+      //sqliteDb.CreateConnection().ConnectionString(cookieDatabase);
+
 
 
       display("press any key to exit:");

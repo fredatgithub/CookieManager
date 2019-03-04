@@ -16,9 +16,9 @@ namespace SqliteHelper
       sql_con = new SQLiteConnection($"Data Source={dbfullPath};Version=3;New=False;Compress=True;");
     }
 
-    public static void ExecuteQuery(string txtQuery)
+    public static void ExecuteQuery(string dbPath, string txtQuery)
     {
-      SetConnection();
+      SetConnection(dbPath);
       sql_con.Open();
       sql_cmd = sql_con.CreateCommand();
       sql_cmd.CommandText = txtQuery;
@@ -26,10 +26,10 @@ namespace SqliteHelper
       sql_con.Close();
     }
 
-    public static void Delete(string table, string condition)
+    public static void Delete(string dbPath, string table, string condition)
     {
       string txtSQLQuery = $"delete from {table} where {condition}";
-      ExecuteQuery(txtSQLQuery);
+      ExecuteQuery(dbPath, txtSQLQuery);
     }
 
     public static void LoadData()
@@ -46,10 +46,10 @@ namespace SqliteHelper
       sql_con.Close();
     }
 
-    public static void Add(string message)
+    public static void Add(string dbPath, string message)
     {
       string txtSQLQuery = "insert into  mains (desc) values ('" + message + "')";
-      ExecuteQuery(txtSQLQuery);
+      ExecuteQuery(dbPath, txtSQLQuery);
     }
   }
 }

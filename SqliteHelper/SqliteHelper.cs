@@ -7,9 +7,9 @@ namespace SqliteHelper
   {
     public static SQLiteConnection sql_con;
     public static SQLiteCommand sql_cmd;
-    public static SQLiteDataAdapter DB;
+    public static SQLiteDataAdapter DatabaseAdapter;
     public static DataSet dataSet = new DataSet();
-    public static DataTable DT = new DataTable();
+    public static DataTable dataTable = new DataTable();
 
     public static void SetConnection(string dbfullPath = "cookies.sqlite")
     {
@@ -32,18 +32,19 @@ namespace SqliteHelper
       ExecuteQuery(dbPath, txtSQLQuery);
     }
 
-    public static void LoadData()
+    public static DataTable LoadData(string tableName)
     {
       SetConnection();
       sql_con.Open();
       sql_cmd = sql_con.CreateCommand();
-      const string CommandText = "select id, desc from mains";
-      DB = new SQLiteDataAdapter(CommandText, sql_con);
+      string CommandText = $"select * from {tableName}";
+      DatabaseAdapter = new SQLiteDataAdapter(CommandText, sql_con);
       dataSet.Reset();
-      DB.Fill(dataSet);
-      DT = dataSet.Tables[0];
+      DatabaseAdapter.Fill(dataSet);
+      dataTable = dataSet.Tables[0];
       //Grid.DataSource = DT;
       sql_con.Close();
+      return dataTable;
     }
 
     public static void Add(string dbPath, string message)

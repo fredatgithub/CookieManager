@@ -47,9 +47,9 @@ namespace SqliteHelper
       return dataTable;
     }
 
-    public static void Add(string dbPath, string message)
+    public static void Add(string dbPath, string tableName, string message)
     {
-      string txtSQLQuery = "insert into  mains (desc) values ('" + message + "')";
+      string txtSQLQuery = $"insert into  {tableName} (desc) values ('" + message + "')";
       ExecuteQuery(dbPath, txtSQLQuery);
     }
   }
